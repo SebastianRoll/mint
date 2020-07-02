@@ -88,6 +88,7 @@ defmodule Mint.Core.Util do
     end
   end
 
+  def scheme_to_transport(:socks5), do: Mint.Core.Transport.Socks5
   def scheme_to_transport(:http), do: Mint.Core.Transport.TCP
   def scheme_to_transport(:https), do: Mint.Core.Transport.SSL
   def scheme_to_transport(module) when is_atom(module), do: module

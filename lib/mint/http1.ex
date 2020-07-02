@@ -92,7 +92,7 @@ defmodule Mint.HTTP1 do
     buffer: "",
     private: %{}
   ]
-
+  def ja(), do: 123
   @doc """
   Same as `Mint.HTTP.connect/4`, but forces an HTTP/1 or HTTP/1.1 connection.
 
@@ -241,6 +241,8 @@ defmodule Mint.HTTP1 do
          :ok <- transport.send(socket, iodata) do
       request_ref = make_ref()
       request = new_request(request_ref, method, body, encoding)
+#      IO.inspect request
+#      IO.inspect "request------"
 
       if conn.request == nil do
         conn = %__MODULE__{conn | request: request}

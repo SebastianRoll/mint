@@ -491,6 +491,10 @@ defmodule Mint.HTTP2 do
       | headers
     ]
 
+    IO.inspect headers
+    IO.inspect "headers---http2"
+
+
     {conn, stream_id, ref} = open_stream(conn)
 
     conn =
